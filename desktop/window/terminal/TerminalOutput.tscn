@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://hyomnxmgdibe"]
+
+[ext_resource type="FontFile" uid="uid://2ugopputs56n" path="res://fonts/Pixelify_Sans/static/PixelifySans-Medium.ttf" id="1_jbi3e"]
+[ext_resource type="Script" uid="uid://ch4bb7a3sse0i" path="res://desktop/window/terminal/terminal_output.gd" id="2_3u4up"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3u4up"]
+
+[node name="TerminalOutput" type="Label" unique_id=686914841]
+theme_override_fonts/font = ExtResource("1_jbi3e")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3u4up")
+script = ExtResource("2_3u4up")
