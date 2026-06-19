@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://7673crcwmcum"]
+
+[ext_resource type="Texture2D" uid="uid://dkcm4myj3nmuu" path="res://sprites/taskbar.png" id="1_7rypk"]
+
+[node name="Taskbar" type="Control" unique_id=1426090476]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1813649147]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.06666667
+offset_bottom = -72.0
+grow_horizontal = 2
+texture = ExtResource("1_7rypk")
+metadata/_edit_use_anchors_ = true

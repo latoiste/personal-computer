@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://c6mswap2hga2b"]
+
+[ext_resource type="Shader" uid="uid://beiymhc5821y2" path="res://shaders/vhs_by_pend00.gdshader" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://g2546y5bpp1" path="res://sprites/frame.png" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://c3h8pn8g5gdd3" path="res://shell/file_system_manager.gd" id="3_7mycd"]
+[ext_resource type="PackedScene" uid="uid://7673crcwmcum" path="res://desktop/taskbar/taskbar.tscn" id="4_lquwl"]
+[ext_resource type="PackedScene" uid="uid://cy5dik8x2m1ht" path="res://desktop/window/terminal/terminal.tscn" id="5_lquwl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig7tw"]
+bg_color = Color(0.16862746, 0.5019608, 0.46666667, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0xm2m"]
+shader = ExtResource("1_0xm2m")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.10000000475
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(1440, 1080)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.0
+shader_parameter/noise_opacity = 0.170000008075
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/brightness = 1.14
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.45
+shader_parameter/vignette_opacity = 0.30000001425
+
+[node name="Main" type="Control" unique_id=1951232587]
+layout_mode = 3
+anchor_left = 0.063
+anchor_top = 0.086
+anchor_right = 0.93600005
+anchor_bottom = 0.91600007
+offset_left = -90.72
+offset_top = -92.880005
+offset_right = 92.15991
+offset_bottom = 90.71991
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="." unique_id=899079534]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ig7tw")
+
+[node name="Shader" type="ColorRect" parent="." unique_id=500843797]
+z_index = 20
+material = SubResource("ShaderMaterial_0xm2m")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.03083511, 0.5222026, 0.41173583, 1)
+
+[node name="Frame" type="TextureRect" parent="." unique_id=1133760539]
+z_index = 30
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0xm2m")
+
+[node name="FileSystemManager" type="Node" parent="." unique_id=11942775]
+script = ExtResource("3_7mycd")
+
+[node name="Screen" type="Control" parent="." unique_id=1939040626]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Taskbar" parent="Screen" unique_id=1426090476 instance=ExtResource("4_lquwl")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0625
+anchor_top = 0.85
+anchor_right = 0.9375
+anchor_bottom = 0.9166667
+metadata/_edit_use_anchors_ = true
+
+[node name="Terminal" parent="Screen" unique_id=1095671729 instance=ExtResource("5_lquwl")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.26527777
+anchor_top = 0.24259259
+anchor_right = 0.6458333
+anchor_bottom = 0.6935185
+metadata/_edit_use_anchors_ = true
