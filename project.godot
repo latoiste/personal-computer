@@ -23,6 +23,7 @@ Fs="*uid://c3h8pn8g5gdd3"
 
 window/size/viewport_width=1440
 window/size/viewport_height=1080
+window/stretch/mode="viewport"
 
 [physics]
 

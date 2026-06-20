@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://c3h8pn8g5gdd3" path="res://shell/file_system_manager.gd" id="3_7mycd"]
 [ext_resource type="Script" uid="uid://bttuvjygoplxs" path="res://desktop/screen/screen.gd" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://7673crcwmcum" path="res://desktop/taskbar/taskbar.tscn" id="4_lquwl"]
-[ext_resource type="PackedScene" uid="uid://cy5dik8x2m1ht" path="res://desktop/window/terminal/terminal.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://btebdow7iwe56" path="res://dialogue/dialogue.tscn" id="6_7mycd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig7tw"]
 bg_color = Color(0.16862746, 0.5019608, 0.46666667, 1)
@@ -83,23 +83,36 @@ script = ExtResource("3_7mycd")
 
 [node name="Screen" type="Control" parent="." unique_id=1939040626]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.0625
+anchor_top = 0.083333336
+anchor_right = 0.9375
+anchor_bottom = 0.9166667
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_7mycd")
+metadata/_edit_use_anchors_ = true
 
 [node name="Taskbar" parent="Screen" unique_id=1426090476 instance=ExtResource("4_lquwl")]
 z_index = 40
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0625
-anchor_top = 0.85
-anchor_right = 0.9375
-anchor_bottom = 0.9166667
+anchor_top = 0.92100006
+offset_top = 0.09991455
 offset_bottom = 0.0
-metadata/_edit_use_anchors_ = true
+grow_vertical = 0
 
-[node name="Terminal" parent="Screen" unique_id=1279274390 instance=ExtResource("5_lquwl")]
+[node name="Dialogue" parent="." unique_id=1813025996 instance=ExtResource("6_7mycd")]
+z_index = 100
 layout_mode = 1
+anchor_left = 0.03125
+anchor_top = 0.7314815
+anchor_right = 0.96875
+anchor_bottom = 0.82407403
+offset_left = 15.0
+offset_top = -770.0
+offset_right = -15.0
+offset_bottom = -669.99994
+grow_vertical = 2
+scale = Vector2(1, 1e-05)
+mouse_filter = 1
+mouse_behavior_recursive = 1

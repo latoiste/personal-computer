@@ -39,6 +39,11 @@ layout_mode = 2
 texture = ExtResource("1_7rypk")
 metadata/_edit_use_anchors_ = true
 
+[node name="Notepad" type="TextureRect" parent="." unique_id=674095841]
+layout_mode = 2
+texture = ExtResource("4_icce8")
+expand_mode = 3
+
 [node name="Terminal" type="TextureButton" parent="." unique_id=314138349]
 custom_minimum_size = Vector2(72, 0)
 layout_mode = 2
@@ -48,11 +53,6 @@ texture_hover = ExtResource("5_10hru")
 stretch_mode = 0
 script = ExtResource("6_uo2kq")
 WINDOW_SCENE = ExtResource("8_ud30p")
-
-[node name="Terminal2" type="TextureRect" parent="." unique_id=674095841]
-layout_mode = 2
-texture = ExtResource("4_icce8")
-expand_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1813649147]
 custom_minimum_size = Vector2(32, 0)

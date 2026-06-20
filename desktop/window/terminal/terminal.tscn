@@ -65,7 +65,7 @@ theme_override_constants/margin_bottom = 5
 z_index = 10
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_ccqs3")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 20
 text = "Title"
 
 [node name="CloseButton" type="TextureButton" parent="VBoxContainer/WindowTitleBar/MarginContainer" unique_id=1170636077]

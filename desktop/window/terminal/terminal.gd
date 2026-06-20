@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func on_submit(text: String) -> void:
 	var shell_output := "FAKE SHELL OUTPUT AAAAAAAAAAAAAAAAAAA"
-	var output_string := "> %s\n%s\n" % [text, shell_output]
+	var output_string := ">  %s\n%s\n" % [text, shell_output]
 	var output := TERMINAL_OUTPUT_SCENE.instantiate()
 	output.text = output_string
 	
