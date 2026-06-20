@@ -12,6 +12,8 @@ var is_dragging: bool = false
 var previous_mouse_pos: Vector2
 var mouse_offset: Vector2
 
+signal window_closed
+
 func _ready() -> void:
 	title.text = title_text
 	close_btn.pressed.connect(close_window)
@@ -57,5 +59,6 @@ func close_window() -> void:
 	tween.tween_property(self, "scale", Vector2(0, 0), 0.15).set_ease(Tween.EASE_OUT)
 	
 	await tween.finished
+	window_closed.emit()
 	
 	queue_free()

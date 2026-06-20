@@ -48,7 +48,6 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 5
 
 [node name="Label" type="Label" parent="VBoxContainer/WindowTitleBar/MarginContainer" unique_id=369876416]
-z_index = 10
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_w5lrv")
 theme_override_font_sizes/font_size = 20

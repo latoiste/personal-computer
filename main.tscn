@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c6mswap2hga2b"]
 
 [ext_resource type="Shader" uid="uid://beiymhc5821y2" path="res://shaders/vhs_by_pend00.gdshader" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://dx87ja6cp4gl5" path="res://main.gd" id="1_272bh"]
 [ext_resource type="Texture2D" uid="uid://g2546y5bpp1" path="res://sprites/frame.png" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://c3h8pn8g5gdd3" path="res://shell/file_system_manager.gd" id="3_7mycd"]
 [ext_resource type="Script" uid="uid://bttuvjygoplxs" path="res://desktop/screen/screen.gd" id="4_7mycd"]
@@ -46,6 +47,7 @@ offset_right = 92.15991
 offset_bottom = 90.71991
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_272bh")
 
 [node name="Background" type="Panel" parent="." unique_id=899079534]
 layout_mode = 1
@@ -111,7 +113,7 @@ anchor_bottom = 0.82407403
 offset_left = 15.0
 offset_top = -770.0
 offset_right = -15.0
-offset_bottom = -669.99994
+offset_bottom = -719.99994
 grow_vertical = 2
 scale = Vector2(1, 1e-05)
 mouse_filter = 1

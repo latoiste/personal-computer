@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://ceyu1qra6du6a"]
+
+[ext_resource type="Script" uid="uid://cp2oextivmc81" path="res://desktop/window/notepad/notepad.gd" id="1_tv53o"]
+[ext_resource type="Texture2D" uid="uid://dp2obvmvabo8n" path="res://sprites/window_title.png" id="3_sym0k"]
+[ext_resource type="FontFile" uid="uid://2ugopputs56n" path="res://fonts/Pixelify_Sans/static/PixelifySans-Medium.ttf" id="4_2s72g"]
+[ext_resource type="Texture2D" uid="uid://qu56fw0qyesu" path="res://sprites/btn_close.png" id="5_o4j5x"]
+[ext_resource type="Texture2D" uid="uid://cdku3qabfmbf" path="res://sprites/window.png" id="6_4calx"]
+[ext_resource type="FontFile" uid="uid://boak72bdbkr1f" path="res://fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="6_rm3jd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6adx5"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Notepad" type="Control" unique_id=1279274390]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("1_tv53o")
+content_text = "AAAAAAAAAAAAAAAa"
+title_text = "Notepad"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1681793002]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = -2
+
+[node name="WindowTitleBar" type="PanelContainer" parent="VBoxContainer" unique_id=1816539913]
+layout_mode = 2
+
+[node name="Title" type="NinePatchRect" parent="VBoxContainer/WindowTitleBar" unique_id=1796020578]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+mouse_filter = 1
+texture = ExtResource("3_sym0k")
+patch_margin_left = 16
+patch_margin_top = 4
+patch_margin_right = 16
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/WindowTitleBar" unique_id=1826370180]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="VBoxContainer/WindowTitleBar/MarginContainer" unique_id=369876416]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_2s72g")
+theme_override_font_sizes/font_size = 20
+text = "Title"
+
+[node name="CloseButton" type="TextureButton" parent="VBoxContainer/WindowTitleBar/MarginContainer" unique_id=1170636077]
+custom_minimum_size = Vector2(28, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource("5_o4j5x")
+stretch_mode = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=1052500967]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_6adx5")
+
+[node name="Body" type="NinePatchRect" parent="VBoxContainer/PanelContainer" unique_id=1866411796]
+custom_minimum_size = Vector2(0, 84)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("6_4calx")
+patch_margin_left = 16
+patch_margin_top = 4
+patch_margin_right = 16
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer" unique_id=360376222]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Content" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer" unique_id=1613462013]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rm3jd")
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 3

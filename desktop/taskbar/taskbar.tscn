@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://l33mqyvi771" path="res://sprites/terminal_icon_pressed.png" id="4_10hru"]
 [ext_resource type="Texture2D" uid="uid://c3fbwdsejanur" path="res://sprites/notepad_icon.png" id="4_icce8"]
 [ext_resource type="Texture2D" uid="uid://c107tcsp45o2v" path="res://sprites/terminal_icon_hover.png" id="5_10hru"]
+[ext_resource type="PackedScene" uid="uid://ceyu1qra6du6a" path="res://desktop/window/notepad/notepad.tscn" id="6_bfifv"]
 [ext_resource type="Script" uid="uid://dauoekidoc2ek" path="res://desktop/taskbar/taskbar_icon.gd" id="6_uo2kq"]
 [ext_resource type="PackedScene" uid="uid://cy5dik8x2m1ht" path="res://desktop/window/terminal/terminal.tscn" id="8_ud30p"]
 
@@ -39,10 +40,13 @@ layout_mode = 2
 texture = ExtResource("1_7rypk")
 metadata/_edit_use_anchors_ = true
 
-[node name="Notepad" type="TextureRect" parent="." unique_id=674095841]
+[node name="Notepad" type="TextureButton" parent="." unique_id=1929019378]
+custom_minimum_size = Vector2(72, 72)
 layout_mode = 2
-texture = ExtResource("4_icce8")
-expand_mode = 3
+texture_normal = ExtResource("4_icce8")
+stretch_mode = 0
+script = ExtResource("6_uo2kq")
+WINDOW_SCENE = ExtResource("6_bfifv")
 
 [node name="Terminal" type="TextureButton" parent="." unique_id=314138349]
 custom_minimum_size = Vector2(72, 0)

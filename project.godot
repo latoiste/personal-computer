@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Fs="*uid://c3h8pn8g5gdd3"
+DialogueDb="*uid://cp1q2ti5tuphn"
 
 [display]
 
