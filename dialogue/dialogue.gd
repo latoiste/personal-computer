@@ -3,7 +3,7 @@ extends Control
 
 @onready var label: Label = $MarginContainer/Label
 
-const TEXT_SPEED = 0.02
+const TEXT_SPEED = 0.025
 
 func _ready() -> void:
 	visible = false
@@ -24,12 +24,14 @@ func render(text: String) -> void:
 	await animate_text()
 	await get_tree().create_timer(1.5).timeout
 	
-	close()
+	await close()
 	visible = false
 
 func close() -> void:
 	var tween := create_tween()
 	tween.tween_property(self, "scale:y", 0, 0.1)
+	
+	await tween.finished
 	
 func animate_text() -> void:
 	var tween := create_tween()
