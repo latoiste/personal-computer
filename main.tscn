@@ -3,6 +3,7 @@
 [ext_resource type="Shader" uid="uid://beiymhc5821y2" path="res://shaders/vhs_by_pend00.gdshader" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://g2546y5bpp1" path="res://sprites/frame.png" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://c3h8pn8g5gdd3" path="res://shell/file_system_manager.gd" id="3_7mycd"]
+[ext_resource type="Script" uid="uid://bttuvjygoplxs" path="res://desktop/screen/screen.gd" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://7673crcwmcum" path="res://desktop/taskbar/taskbar.tscn" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cy5dik8x2m1ht" path="res://desktop/window/terminal/terminal.tscn" id="5_lquwl"]
 
@@ -57,7 +58,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ig7tw")
 
 [node name="Shader" type="ColorRect" parent="." unique_id=500843797]
-z_index = 20
+z_index = 70
 material = SubResource("ShaderMaterial_0xm2m")
 layout_mode = 1
 anchors_preset = 15
@@ -68,7 +69,7 @@ grow_vertical = 2
 color = Color(0.03083511, 0.5222026, 0.41173583, 1)
 
 [node name="Frame" type="TextureRect" parent="." unique_id=1133760539]
-z_index = 30
+z_index = 100
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -87,21 +88,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("4_7mycd")
 
 [node name="Taskbar" parent="Screen" unique_id=1426090476 instance=ExtResource("4_lquwl")]
+z_index = 40
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0625
 anchor_top = 0.85
 anchor_right = 0.9375
 anchor_bottom = 0.9166667
+offset_bottom = 0.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Terminal" parent="Screen" unique_id=1095671729 instance=ExtResource("5_lquwl")]
+[node name="Terminal" parent="Screen" unique_id=1279274390 instance=ExtResource("5_lquwl")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.26527777
-anchor_top = 0.24259259
-anchor_right = 0.6458333
-anchor_bottom = 0.42777777
-metadata/_edit_use_anchors_ = true

@@ -1,22 +1,62 @@
 [gd_scene format=3 uid="uid://7673crcwmcum"]
 
 [ext_resource type="Texture2D" uid="uid://dkcm4myj3nmuu" path="res://sprites/taskbar.png" id="1_7rypk"]
+[ext_resource type="Script" uid="uid://do2j5jqjtojgt" path="res://desktop/taskbar/taskbar.gd" id="1_jgdy0"]
+[ext_resource type="Texture2D" uid="uid://cxqtg6d3l2xhf" path="res://sprites/launcher.png" id="1_v1nlu"]
+[ext_resource type="Texture2D" uid="uid://2wlurq3kw6kt" path="res://sprites/terminal_icon.png" id="3_sk1ne"]
+[ext_resource type="Texture2D" uid="uid://l33mqyvi771" path="res://sprites/terminal_icon_pressed.png" id="4_10hru"]
+[ext_resource type="Texture2D" uid="uid://c3fbwdsejanur" path="res://sprites/notepad_icon.png" id="4_icce8"]
+[ext_resource type="Texture2D" uid="uid://c107tcsp45o2v" path="res://sprites/terminal_icon_hover.png" id="5_10hru"]
+[ext_resource type="Script" uid="uid://dauoekidoc2ek" path="res://desktop/taskbar/taskbar_icon.gd" id="6_uo2kq"]
+[ext_resource type="PackedScene" uid="uid://cy5dik8x2m1ht" path="res://desktop/window/terminal/terminal.tscn" id="8_ud30p"]
 
-[node name="Taskbar" type="Control" unique_id=1426090476]
-layout_mode = 3
+[node name="Taskbar" type="HBoxContainer" unique_id=636129337]
+custom_minimum_size = Vector2(0, 48)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -1008.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 0
+script = ExtResource("1_jgdy0")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=2072761427]
+custom_minimum_size = Vector2(2.46, 0)
+layout_direction = 2
+layout_mode = 2
+texture = ExtResource("1_7rypk")
+metadata/_edit_use_anchors_ = true
+
+[node name="Launcher" type="TextureRect" parent="." unique_id=1371031654]
+layout_mode = 2
+texture = ExtResource("1_v1nlu")
+expand_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1881531827]
+custom_minimum_size = Vector2(22.425, 0)
+layout_mode = 2
+texture = ExtResource("1_7rypk")
+metadata/_edit_use_anchors_ = true
+
+[node name="Terminal" type="TextureButton" parent="." unique_id=314138349]
+custom_minimum_size = Vector2(72, 0)
+layout_mode = 2
+texture_normal = ExtResource("3_sk1ne")
+texture_pressed = ExtResource("4_10hru")
+texture_hover = ExtResource("5_10hru")
+stretch_mode = 0
+script = ExtResource("6_uo2kq")
+WINDOW_SCENE = ExtResource("8_ud30p")
+
+[node name="Terminal2" type="TextureRect" parent="." unique_id=674095841]
+layout_mode = 2
+texture = ExtResource("4_icce8")
+expand_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1813649147]
-custom_minimum_size = Vector2(0, 72)
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.06666667
-offset_bottom = -72.0
-grow_horizontal = 2
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
 texture = ExtResource("1_7rypk")
 metadata/_edit_use_anchors_ = true

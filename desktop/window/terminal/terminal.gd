@@ -11,12 +11,6 @@ const TERMINAL_OUTPUT_SCENE := preload("uid://hyomnxmgdibe")
 func _ready() -> void:
 	super._ready()
 	prompt.text_submitted.connect(on_submit)
-	#terminal_body.gui_input.connect(on_pressed)
-
-#func on_pressed(event: InputEvent) -> void:
-	#if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		#if event.pressed:
-			#prompt.grab_focus()
 
 func on_submit(text: String) -> void:
 	var shell_output := "FAKE SHELL OUTPUT AAAAAAAAAAAAAAAAAAA"
