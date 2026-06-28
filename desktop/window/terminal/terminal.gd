@@ -13,13 +13,14 @@ var request_manager: RequestManager
 func _ready() -> void:
 	super._ready()
 	prompt.text_submitted.connect(on_submit)
+	shell.initialize(request_manager)
 
 func initialize(request_manager: RequestManager) -> void:
 	self.request_manager = request_manager
 
 func on_submit(text: String) -> void:
-	var shell_output := "FAKE SHELL OUTPUT AAAAAAAAAAAAAAAAAAA"
-	var output_string := ">  %s\n%s\n" % [text, shell_output]
+	var shell_output := shell.parse_command(text)
+	var output_string := ">  %s\n%s" % [text, shell_output]
 	var output := TERMINAL_OUTPUT_SCENE.instantiate()
 	output.text = output_string
 	

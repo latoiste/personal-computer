@@ -44,7 +44,6 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed and is_hovering_title_bar:
 			is_dragging = true
-			print(mouse_offset)  
 		else:
 			previous_mouse_pos = Vector2.ZERO
 			is_dragging = false

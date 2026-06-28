@@ -10,7 +10,7 @@ const MIN_WAIT_TIME := 5
 const MAX_WAIT_TIME := 5
 
 var requests: Array[Request] = [
-	Request.new("Sorting Order", "Need help sorting my files to seperate folders", 50, 300),
+	Request.new("Sorting Order", "Need help sorting my files to seperate folders", 50, 300, ["help", "sort"]),
 	#Request.new("Cache Clearing", "Looking for someone to help clear my blogs cache", 60, 480),
 	#Request.new("Storage Clean up", "too much bloat, help clean", 75, 600),
 ]
@@ -31,7 +31,6 @@ func spawn_new_request() -> void:
 
 func wait_for_request() -> void:
 	var wait_time := randi_range(MIN_WAIT_TIME, MAX_WAIT_TIME)
-	print("set wait time for %s" % wait_time)
 	request_timer.wait_time = wait_time
 	
 	request_timer.start()

@@ -11,28 +11,30 @@ var remaining_time: float:
 		remaining_time = value
 		if (value <= 0):
 			timeout.emit()
+var allowed_commands: Array[String]
 
 var is_accepted: bool
 
-signal on_complete
+signal completed
+signal activated
 signal timeout
 
-func _init(request_title: String, description: String, reward: int, duration_sec: int) -> void:
+func _init(request_title: String, description: String, reward: int, duration_sec: int, allowed_commands: Array[String]) -> void:
 	self.request_title = request_title
 	self.description = description
 	self.reward = reward
 	self.duration_sec = duration_sec
+	self.allowed_commands = allowed_commands
 	
 	id = _random_id()
 	is_accepted = false
 	remaining_time = duration_sec
 
 func clone() -> Request:
-	var copy := Request.new(request_title, description, reward, duration_sec)
+	var copy := Request.new(request_title, description, reward, duration_sec, allowed_commands)
 	return copy
 
 func on_accepted() -> void:
-	print("hello im request and im accepted")
 	is_accepted = true
 
 func _random_id() -> String:
