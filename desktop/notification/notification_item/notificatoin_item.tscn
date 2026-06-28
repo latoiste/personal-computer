@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://utrytjthgcjd" path="res://sprites/desktop_widget.png" id="1_p5d1n"]
 [ext_resource type="Script" uid="uid://cgsqfeppc1x67" path="res://desktop/notification/notification_item/notificatoin_item.gd" id="2_5eaqf"]
-[ext_resource type="FontFile" uid="uid://boak72bdbkr1f" path="res://fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="2_aeh63"]
 [ext_resource type="Texture2D" uid="uid://bvx3eq8uavflk" path="res://sprites/button/yes/btn_yes.png" id="3_aeh63"]
+[ext_resource type="Theme" uid="uid://bsnnttq3nwdek" path="res://theme/text.tres" id="3_iap45"]
 [ext_resource type="Texture2D" uid="uid://dvy38xeluifhq" path="res://sprites/button/no/btn_no.png" id="4_5eaqf"]
 [ext_resource type="Texture2D" uid="uid://txj1ap8yhsak" path="res://sprites/button/yes/btn_btn_yes_pressed.png" id="5_xl6al"]
 [ext_resource type="Texture2D" uid="uid://co1i0u4q30wm1" path="res://sprites/button/yes/btn_yes_hover.png" id="6_rcqn7"]
@@ -45,8 +45,8 @@ theme_override_constants/separation = 0
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1215992886]
 layout_mode = 2
 size_flags_vertical = 2
+theme = ExtResource("3_iap45")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_aeh63")
 theme_override_font_sizes/font_size = 24
 text = "Title"
 
@@ -54,8 +54,9 @@ text = "Title"
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("3_iap45")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_aeh63")
+theme_override_constants/line_spacing = -5
 theme_override_font_sizes/font_size = 18
 text = "Need help sorting my files to seperate folders"
 autowrap_mode = 3
@@ -70,8 +71,8 @@ size_flags_vertical = 10
 
 [node name="Reward" type="Label" parent="MarginContainer/VBoxContainer2/CenterContainer2" unique_id=983023834]
 layout_mode = 2
+theme = ExtResource("3_iap45")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_aeh63")
 text = "Reward:"
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer2" unique_id=841043573]

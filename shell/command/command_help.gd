@@ -7,8 +7,8 @@ func _init(allowed_commands: Array[String]) -> void:
 	self.allowed_commands = allowed_commands
 
 static func usage() -> String:
-	return  """help \t\t Print this message
-		\t\t Usage: help
+	return  """help - Print this message
+		 Usage: help
 	"""
 
 func exec_cmd(args: Array[String]) -> CommandOutput:

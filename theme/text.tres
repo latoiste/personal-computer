@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://bsnnttq3nwdek"]
+
+[ext_resource type="FontFile" uid="uid://dtqs6f0tn533a" path="res://fonts/Open_Sans/static/OpenSans-SemiBold.ttf" id="1_mkhgq"]
+
+[resource]
+default_font = ExtResource("1_mkhgq")
+Label/font_sizes/font_size = 20
+Label/fonts/font = ExtResource("1_mkhgq")

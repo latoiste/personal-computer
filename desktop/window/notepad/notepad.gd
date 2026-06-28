@@ -20,7 +20,6 @@ func initialize(request_manager: RequestManager) -> void:
 
 func add_request(request: Request) -> void:
 	write_request(request)
-	print("notepad received new reuest")
 
 func write_request(request: Request) -> void:
 	var instance := REQUEST_TEXT_SCENE.instantiate() as RequestText

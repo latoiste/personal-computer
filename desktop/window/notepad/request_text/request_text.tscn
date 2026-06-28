@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b376lh2npwgjx"]
 
-[ext_resource type="FontFile" uid="uid://boak72bdbkr1f" path="res://fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="1_rqow1"]
 [ext_resource type="Script" uid="uid://co155ntl5558d" path="res://desktop/window/notepad/request_text/request_text.gd" id="1_wiew2"]
+[ext_resource type="Theme" uid="uid://bsnnttq3nwdek" path="res://theme/text.tres" id="2_eopkk"]
 
 [node name="RequestText" type="VBoxContainer" unique_id=1196236274]
 anchors_preset = 15
@@ -16,15 +16,15 @@ metadata/_edit_use_anchors_ = true
 [node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=1667348021]
 layout_mode = 2
 split_offsets = PackedInt32Array(622)
+dragging_enabled = false
 split_offset = 622
 
 [node name="Title" type="Label" parent="HSplitContainer" unique_id=314231462]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("2_eopkk")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_rqow1")
-theme_override_font_sizes/font_size = 24
 text = "Title"
 autowrap_mode = 3
 
@@ -32,32 +32,28 @@ autowrap_mode = 3
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 size_flags_horizontal = 10
+theme = ExtResource("2_eopkk")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_rqow1")
-theme_override_font_sizes/font_size = 24
 text = "Timer"
 
 [node name="Description" type="Label" parent="." unique_id=1181731239]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
+theme = ExtResource("2_eopkk")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_rqow1")
-theme_override_font_sizes/font_size = 20
 text = "Description"
 autowrap_mode = 3
 
 [node name="Address" type="Label" parent="." unique_id=1266785921]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
+theme = ExtResource("2_eopkk")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_rqow1")
-theme_override_font_sizes/font_size = 20
 text = "Client PC Location: "
 autowrap_mode = 3
 
 [node name="Reward" type="Label" parent="." unique_id=1547573672]
 layout_mode = 2
+theme = ExtResource("2_eopkk")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_rqow1")
-theme_override_font_sizes/font_size = 20
 text = "Reward"

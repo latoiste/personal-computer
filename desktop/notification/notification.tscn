@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://utrytjthgcjd" path="res://sprites/desktop_widget.png" id="1_o8uvv"]
 [ext_resource type="Script" uid="uid://bsggpkfr8504k" path="res://desktop/notification/notification.gd" id="2_3vefb"]
-[ext_resource type="FontFile" uid="uid://boak72bdbkr1f" path="res://fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="3_5jwna"]
+[ext_resource type="Theme" uid="uid://bsnnttq3nwdek" path="res://theme/text.tres" id="3_t76us"]
 
 [node name="Notification" type="NinePatchRect" unique_id=1428965785]
 anchors_preset = 15
@@ -41,9 +41,8 @@ theme_override_constants/separation = 12
 layout_mode = 2
 size_flags_vertical = 0
 size_flags_stretch_ratio = 20.0
+theme = ExtResource("3_t76us")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_5jwna")
-theme_override_font_sizes/font_size = 32
 text = "Requests"
 metadata/_edit_use_anchors_ = true
 
