@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://5wq2upsrope5"]
+
+[ext_resource type="Texture2D" uid="uid://utrytjthgcjd" path="res://sprites/desktop_widget.png" id="1_o8uvv"]
+[ext_resource type="Script" uid="uid://bsggpkfr8504k" path="res://desktop/notification/notification.gd" id="2_3vefb"]
+[ext_resource type="FontFile" uid="uid://boak72bdbkr1f" path="res://fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="3_5jwna"]
+
+[node name="Notification" type="NinePatchRect" unique_id=1428965785]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_o8uvv")
+patch_margin_left = 16
+patch_margin_top = 4
+patch_margin_right = 16
+patch_margin_bottom = 4
+script = ExtResource("2_3vefb")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1600046720]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=995024118]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1860993370]
+layout_mode = 2
+size_flags_vertical = 0
+size_flags_stretch_ratio = 20.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_5jwna")
+theme_override_font_sizes/font_size = 32
+text = "Requests"
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=1947872961]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer" unique_id=1849334078]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 15

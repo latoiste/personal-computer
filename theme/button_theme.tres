@@ -1,0 +1,24 @@
+[gd_resource type="Theme" format=3 uid="uid://dex44rsj1a7pj"]
+
+[ext_resource type="FontFile" uid="uid://boak72bdbkr1f" path="res://fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="1_n7vqe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n7vqe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2a44"]
+bg_color = Color(0.50534403, 0.5053441, 0.50534385, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bw5ap"]
+bg_color = Color(0.67058825, 0.67058825, 0.67058825, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.43137255, 0.43137255, 0.43137255, 1)
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[resource]
+default_font = ExtResource("1_n7vqe")
+Button/styles/focus = SubResource("StyleBoxEmpty_n7vqe")
+Button/styles/hover = SubResource("StyleBoxFlat_j2a44")
+Button/styles/normal = SubResource("StyleBoxFlat_bw5ap")

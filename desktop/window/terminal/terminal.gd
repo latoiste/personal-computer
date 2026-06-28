@@ -1,16 +1,21 @@
 class_name Terminal
 extends DesktopWindow
 
-@onready var shell = $Shell
+@onready var shell: Shell = $Shell
 @onready var terminal_body: Panel = %TerminalBody
 @onready var prompt_container: VBoxContainer = %PromptContainer
 @onready var prompt: Prompt = %Prompt
 
 const TERMINAL_OUTPUT_SCENE := preload("uid://hyomnxmgdibe")
 
+var request_manager: RequestManager
+
 func _ready() -> void:
 	super._ready()
 	prompt.text_submitted.connect(on_submit)
+
+func initialize(request_manager: RequestManager) -> void:
+	self.request_manager = request_manager
 
 func on_submit(text: String) -> void:
 	var shell_output := "FAKE SHELL OUTPUT AAAAAAAAAAAAAAAAAAA"

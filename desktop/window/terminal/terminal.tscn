@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://cy5dik8x2m1ht"]
 
 [ext_resource type="Script" uid="uid://c18witkkvevj6" path="res://desktop/window/terminal/terminal.gd" id="1_xa21f"]
-[ext_resource type="Texture2D" uid="uid://dp2obvmvabo8n" path="res://sprites/window_title.png" id="2_xa21f"]
+[ext_resource type="Texture2D" uid="uid://dp2obvmvabo8n" path="res://sprites/window/window_title.png" id="2_xa21f"]
 [ext_resource type="FontFile" uid="uid://2ugopputs56n" path="res://fonts/Pixelify_Sans/static/PixelifySans-Medium.ttf" id="3_ccqs3"]
-[ext_resource type="Texture2D" uid="uid://qu56fw0qyesu" path="res://sprites/btn_close.png" id="4_rchhl"]
-[ext_resource type="Texture2D" uid="uid://cdku3qabfmbf" path="res://sprites/window.png" id="5_spnuq"]
+[ext_resource type="Texture2D" uid="uid://qu56fw0qyesu" path="res://sprites/button/close/btn_close.png" id="4_rchhl"]
+[ext_resource type="Texture2D" uid="uid://wk1s6j2l1qmq" path="res://sprites/button/close/btn_close_pressed.png" id="5_rchhl"]
+[ext_resource type="Texture2D" uid="uid://co3alyx0pgwgj" path="res://sprites/window/window_border.png" id="5_xa21f"]
+[ext_resource type="Texture2D" uid="uid://vjwlhyxhlpcc" path="res://sprites/button/close/btn_close_hover.png" id="6_spnuq"]
 [ext_resource type="Script" uid="uid://c7y0v38yltds8" path="res://desktop/window/terminal/prompt.gd" id="6_xa21f"]
+[ext_resource type="Script" uid="uid://uf4ck3p30i7l" path="res://shell/shell.gd" id="9_spnuq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_507eh"]
 
@@ -67,12 +70,14 @@ theme_override_fonts/font = ExtResource("3_ccqs3")
 theme_override_font_sizes/font_size = 20
 text = "Title"
 
-[node name="CloseButton" type="TextureButton" parent="VBoxContainer/WindowTitleBar/MarginContainer" unique_id=1170636077]
+[node name="CloseButton" type="TextureButton" parent="VBoxContainer/WindowTitleBar/MarginContainer" unique_id=1060142531]
 custom_minimum_size = Vector2(28, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_stretch_ratio = 0.0
 texture_normal = ExtResource("4_rchhl")
+texture_pressed = ExtResource("5_rchhl")
+texture_hover = ExtResource("6_spnuq")
 stretch_mode = 0
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=1669510788]
@@ -82,10 +87,11 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_507eh")
 
 [node name="Body" type="NinePatchRect" parent="VBoxContainer/PanelContainer" unique_id=1866411796]
+z_index = 1
 custom_minimum_size = Vector2(0, 84)
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("5_spnuq")
+texture = ExtResource("5_xa21f")
 patch_margin_left = 16
 patch_margin_top = 4
 patch_margin_right = 16
@@ -111,12 +117,20 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 0
 
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/PromptContainer" unique_id=1063998697]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ccqs3")
+theme_override_font_sizes/font_size = 24
+text = "CornShell v2.12
+'help' to list all commands"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/PromptContainer" unique_id=1930081107]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/PromptContainer/HBoxContainer" unique_id=1504146516]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_ccqs3")
+theme_override_font_sizes/font_size = 24
 text = "> "
 
 [node name="Prompt" type="LineEdit" parent="VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/PromptContainer/HBoxContainer" unique_id=816690872]
@@ -125,6 +139,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("3_ccqs3")
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxEmpty_fxrco")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_xa21f")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ccqs3")
@@ -134,9 +149,9 @@ script = ExtResource("6_xa21f")
 
 [node name="TerminalBody" type="Panel" parent="VBoxContainer/PanelContainer" unique_id=514832232]
 unique_name_in_owner = true
-z_index = -1
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lckp2")
 
 [node name="Shell" type="Node" parent="." unique_id=491660403]
+script = ExtResource("9_spnuq")

@@ -22,6 +22,7 @@ func _ready() -> void:
 	window_title_bar.mouse_exited.connect(func(): is_hovering_title_bar = false)
 	
 	var viewport_size := get_viewport_rect().size
+	
 	size = Vector2(viewport_size.x * 0.3, viewport_size.y * 0.5)
 	
 	position = Vector2(

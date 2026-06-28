@@ -7,5 +7,6 @@
 
 [node name="TerminalOutput" type="Label" unique_id=686914841]
 theme_override_fonts/font = ExtResource("1_jbi3e")
+theme_override_font_sizes/font_size = 24
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3u4up")
 script = ExtResource("2_3u4up")
