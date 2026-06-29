@@ -98,3 +98,13 @@ theme_override_constants/margin_bottom = 10
 [node name="Content" type="VBoxContainer" parent="VBoxContainer/PanelContainer/ScrollContainer/MarginContainer" unique_id=1276965685]
 layout_mode = 2
 theme_override_constants/separation = 16
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/PanelContainer/ScrollContainer/MarginContainer" unique_id=281236270]
+layout_mode = 2
+
+[node name="Placeholder" type="Label" parent="VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/CenterContainer" unique_id=906889671]
+layout_mode = 2
+theme = ExtResource("3_2s72g")
+theme_override_colors/font_color = Color(0.23753911, 0.23753914, 0.23753911, 1)
+text = "No Requests Available Yet"
+horizontal_alignment = 1

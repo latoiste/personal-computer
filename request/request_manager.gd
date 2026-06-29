@@ -15,6 +15,7 @@ func on_request_accepted(request: Request) -> void:
 	
 	request.activated.connect(on_request_activated.bind(request))
 	request.completed.connect(on_request_completed.bind(request))
+	request.timeout.connect(on_request_timeout.bind(request))
 	request_added.emit(request)
 
 func on_request_activated(request: Request) -> void:
