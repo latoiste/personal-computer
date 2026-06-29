@@ -30,7 +30,10 @@ func request_removed(_request: Request) -> void:
 		placeholder.visible = true
 
 func write_request(request: Request) -> void:
-	var instance := REQUEST_TEXT_SCENE.instantiate() as RequestText
-	instance.initialize(request)
+	var request_text := REQUEST_TEXT_SCENE.instantiate() as RequestText
+	request_text.initialize(request)
 	
-	content.add_child(instance)
+	request.timeout.connect(request_text.queue_free, CONNECT_ONE_SHOT)
+	request.completed.connect(request_text.queue_free, CONNECT_ONE_SHOT)
+	
+	content.add_child(request_text)

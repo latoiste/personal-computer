@@ -23,9 +23,12 @@ func on_request_activated(request: Request) -> void:
 
 func on_request_completed(request: Request) -> void:
 	active_request = null
+	
+	accepted_requests.erase(request)
 	request_removed.emit(request)
 
 func on_request_timeout(request: Request) -> void:
+	active_request = null
 	accepted_requests.erase(request)
 	request_removed.emit(request)
 

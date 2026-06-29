@@ -14,8 +14,6 @@ func _ready() -> void:
 	description.text = request.description
 	address.text = "Client PC location: %s" % request.id
 	reward.text = "Reward: %s" % str(request.reward)
-	
-	request.timeout.connect(queue_free, CONNECT_ONE_SHOT)
 
 func _process(_delta: float) -> void:
 	update_timer_text()

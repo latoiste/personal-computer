@@ -15,9 +15,9 @@ run/main_scene="uid://c6mswap2hga2b"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
+[debug]
 
-RequestManager="uid://7q3qmj8qwvt7"
+gdscript/warnings/shadowed_variable=0
 
 [display]
 

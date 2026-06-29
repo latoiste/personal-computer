@@ -11,7 +11,7 @@ static func usage() -> String:
 		 Usage: help
 	"""
 
-func exec_cmd(args: Array[String]) -> CommandOutput:
+func exec_cmd(_args: Array[String]) -> CommandOutput:
 	var output := CommandOutput.new()
 	
 	for command in allowed_commands:
@@ -20,4 +20,10 @@ func exec_cmd(args: Array[String]) -> CommandOutput:
 				output.output += CommandHelp.usage()
 			"tunnel":
 				output.output += CommandTunnel.usage()
+			"todo":
+				output.output += CommandTodo.usage()
+			"sort":
+				output.output += CommandSort.usage()
+			"complete":
+				output.output += CommandComplete.usage()
 	return output

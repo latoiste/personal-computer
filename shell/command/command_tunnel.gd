@@ -18,7 +18,7 @@ func exec_cmd(args: Array[String]) -> Command.CommandOutput:
 	var location := args[0]
 	for request in accepted_request:
 		if request.id == location:
-			request.activated.emit()
+			request.activate()
 			return CommandOutput.new(0, "Tunneling into %s\nStarted '%s'\n" % [location, request.request_title])
 	
 	return CommandOutput.new(1, "Could not find location\n")

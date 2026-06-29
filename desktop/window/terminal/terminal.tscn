@@ -120,7 +120,7 @@ size_flags_vertical = 0
 [node name="Label" type="Label" parent="VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/PromptContainer" unique_id=1063998697]
 layout_mode = 2
 theme = ExtResource("3_507eh")
-text = "CornShell v2.12
+text = "Fshh v2.12
 'help' to list all commands"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/PromptContainer" unique_id=1930081107]

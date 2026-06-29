@@ -1,3 +1,4 @@
+@abstract
 class_name Request
 extends Node
 
@@ -19,6 +20,10 @@ signal completed
 signal activated
 signal timeout
 
+@abstract func todo() -> String
+@abstract func check_win() -> bool
+@abstract func clone() -> Request
+
 func _init(request_title: String, description: String, reward: int, duration_sec: int, allowed_commands: Array[String]) -> void:
 	self.request_title = request_title
 	self.description = description
@@ -26,13 +31,19 @@ func _init(request_title: String, description: String, reward: int, duration_sec
 	self.duration_sec = duration_sec
 	self.allowed_commands = allowed_commands
 	
-	id = _random_id()
+	#id = _random_id()
+	id = "1"
 	is_accepted = false
 	remaining_time = duration_sec
 
-func clone() -> Request:
-	var copy := Request.new(request_title, description, reward, duration_sec, allowed_commands)
-	return copy
+func activate() -> void:
+	activated.emit()
+
+func complete() -> bool:
+	if check_win():
+		completed.emit()
+		return true
+	return false
 
 func on_accepted() -> void:
 	is_accepted = true

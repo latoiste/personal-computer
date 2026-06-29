@@ -10,7 +10,12 @@ const MIN_WAIT_TIME := 5
 const MAX_WAIT_TIME := 5
 
 var requests: Array[Request] = [
-	Request.new("Sorting Order", "Need help sorting my files to seperate folders", 50, 300, ["help", "sort"]),
+	SortRequest.new(
+		"Sorting Order", 
+		"Need help sorting my files to seperate folders", 
+		50, 
+		300,
+		["help", "todo", "sort", "complete", "quit"]),
 	#Request.new("Cache Clearing", "Looking for someone to help clear my blogs cache", 60, 480),
 	#Request.new("Storage Clean up", "too much bloat, help clean", 75, 600),
 ]
@@ -26,7 +31,6 @@ func _ready() -> void:
 func spawn_new_request() -> void:
 	var index := randi() % len(requests)
 	screen.on_new_request(requests[index].clone())
-	
 	wait_for_request()
 
 func wait_for_request() -> void:
