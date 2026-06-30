@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://7q3qmj8qwvt7" path="res://request/request_manager.gd" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://5wq2upsrope5" path="res://desktop/notification/notification.tscn" id="7_272bh"]
 [ext_resource type="Texture2D" uid="uid://d3avp8vu6ofoq" path="res://sprites/wallpaper/wallpaper_default.png" id="7_kek77"]
+[ext_resource type="Script" uid="uid://7dellcym0tyt" path="res://desktop/screen/wallpaper.gd" id="8_kek77"]
+[ext_resource type="Script" uid="uid://ext6plledr21" path="res://currency/credits_manager.gd" id="11_efxa6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0xm2m"]
 shader = ExtResource("1_0xm2m")
@@ -96,17 +98,22 @@ anchor_top = 0.20888889
 anchor_bottom = 0.92
 metadata/_edit_use_anchors_ = true
 
-[node name="Background" type="TextureRect" parent="Screen" unique_id=1926143833]
+[node name="Wallpaper" type="TextureRect" parent="Screen" unique_id=1926143833]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.92
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("7_kek77")
+script = ExtResource("8_kek77")
+metadata/_edit_use_anchors_ = true
 
 [node name="RequestTimer" type="Timer" parent="." unique_id=625189171]
 
 [node name="RequestManager" type="Node" parent="." unique_id=1950104058]
 script = ExtResource("7_5vw27")
+
+[node name="CreditsManager" type="Node" parent="." unique_id=1742519211]
+script = ExtResource("11_efxa6")

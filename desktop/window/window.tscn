@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bcamr8nofuitl" path="res://desktop/window/window.gd" id="1_ms5jj"]
 [ext_resource type="Texture2D" uid="uid://dp2obvmvabo8n" path="res://sprites/window/window_title.png" id="1_t505n"]
-[ext_resource type="FontFile" uid="uid://2ugopputs56n" path="res://fonts/Pixelify_Sans/static/PixelifySans-Medium.ttf" id="2_w5lrv"]
+[ext_resource type="Theme" uid="uid://bsnnttq3nwdek" path="res://theme/text.tres" id="3_iv7dw"]
 [ext_resource type="Texture2D" uid="uid://qu56fw0qyesu" path="res://sprites/button/close/btn_close.png" id="4_u27yx"]
 [ext_resource type="Texture2D" uid="uid://wk1s6j2l1qmq" path="res://sprites/button/close/btn_close_pressed.png" id="5_iv7dw"]
 [ext_resource type="Texture2D" uid="uid://co3alyx0pgwgj" path="res://sprites/window/window_border.png" id="5_ms5jj"]
@@ -51,8 +51,7 @@ theme_override_constants/margin_bottom = 5
 
 [node name="Label" type="Label" parent="VBoxContainer/WindowTitleBar/MarginContainer" unique_id=369876416]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_w5lrv")
-theme_override_font_sizes/font_size = 20
+theme = ExtResource("3_iv7dw")
 text = "Title"
 
 [node name="CloseButton" type="TextureButton" parent="VBoxContainer/WindowTitleBar/MarginContainer" unique_id=1170636077]

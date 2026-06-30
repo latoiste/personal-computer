@@ -3,20 +3,24 @@ extends Control
 
 @onready var taskbar: Taskbar = $Taskbar
 @onready var notif: NotificationWidget = $Notification
+@onready var wallpaper: Wallpaper = $Wallpaper
 
 const TERMINAL_SCENE := preload("uid://cy5dik8x2m1ht")
 const NOTEPAD_SCENE := preload("uid://ceyu1qra6du6a")
+const SHOP_SCENE := preload("uid://dyl55msw3nln6")
 
 signal window_opened(window: DesktopWindow)
 signal window_closed(window: DesktopWindow)
 
 var request_manager: RequestManager
+var credits_manager: CreditsManager
 
 func _ready() -> void:
 	notif.visible = false
 	
 	taskbar.terminal_icon_pressed.connect(try_open_window.bind("terminal"))
-	taskbar.notepad_icon_pressed.connect(try_open_window.bind("notepad"))
+	#taskbar.notepad_icon_pressed.connect(try_open_window.bind("notepad"))
+	taskbar.notepad_icon_pressed.connect(try_open_window.bind("shop"))
 	taskbar.notification_icon_pressed.connect(toggle_notification)
 
 func on_new_request(request: Request) -> void:
@@ -56,5 +60,9 @@ func create_window(window: String) -> Node:
 		"notepad":
 			var instance := NOTEPAD_SCENE.instantiate() as Notepad
 			instance.initialize(request_manager)
+			return instance
+		"shop":
+			var instance := SHOP_SCENE.instantiate() as Shop
+			instance.initialize(credits_manager)
 			return instance
 	return null

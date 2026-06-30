@@ -5,11 +5,10 @@ extends Control
 @onready var screen: Screen = $Screen
 @onready var notif: NotificationWidget = $Screen/Notification
 @onready var request_manager: RequestManager = $RequestManager
+@onready var credits_manager: CreditsManager = $CreditsManager
 
 const MIN_WAIT_TIME := 5
 const MAX_WAIT_TIME := 5
-
-var credits: int = 0
 
 var requests: Array[Request] = [
 	SortRequest.new(
@@ -26,9 +25,10 @@ func _ready() -> void:
 	# TODO: Load credits
 	notif.request_accepted.connect(request_manager.on_request_accepted)
 	request_timer.timeout.connect(spawn_new_request)
-	request_manager.request_completed.connect(func(request: Request): credits += request.reward)
+	request_manager.request_completed.connect(func(request: Request): credits_manager.add_credits(request.reward))
 	
 	screen.request_manager = request_manager
+	screen.credits_manager = credits_manager
 	
 	wait_for_request()
 
