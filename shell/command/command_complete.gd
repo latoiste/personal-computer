@@ -16,4 +16,4 @@ func exec_cmd(_args: Array[String]) -> CommandOutput:
 	if !success:
 		return CommandOutput.new(1, "Request not completed, check 'todo' for remaining tasks\n")
 	
-	return CommandOutput.new(0, "Request completed, tunneling out of %s\n" % active_request.id)
+	return CommandOutput.new(0, "Request completed, tunneling out of %s\nReceived %s credits\n" % [active_request.id, active_request.reward])

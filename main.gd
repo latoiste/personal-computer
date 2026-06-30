@@ -9,6 +9,8 @@ extends Control
 const MIN_WAIT_TIME := 5
 const MAX_WAIT_TIME := 5
 
+var credits: int = 0
+
 var requests: Array[Request] = [
 	SortRequest.new(
 		"Sorting Order", 
@@ -20,9 +22,11 @@ var requests: Array[Request] = [
 	#Request.new("Storage Clean up", "too much bloat, help clean", 75, 600),
 ]
 
-func _ready() -> void:	
+func _ready() -> void:
+	# TODO: Load credits
 	notif.request_accepted.connect(request_manager.on_request_accepted)
 	request_timer.timeout.connect(spawn_new_request)
+	request_manager.request_completed.connect(func(request: Request): credits += request.reward)
 	
 	screen.request_manager = request_manager
 	
