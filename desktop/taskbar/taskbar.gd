@@ -4,10 +4,12 @@ extends HBoxContainer
 @onready var notepad: TextureButton = $Notepad
 @onready var terminal: TextureButton = $Terminal
 @onready var notif: TextureButton = $Notification
+@onready var shop: TextureButton = $Shop
 
 signal terminal_icon_pressed
 signal notepad_icon_pressed
 signal notification_icon_pressed
+signal shop_icon_pressed
 
 const NOTIFICATION_ICON_UNREAD = preload("uid://conupe1lq7jdb")
 const NOTIFICATION_ICON_UNREAD_HOVER = preload("uid://dpbgnoha50kvf")
@@ -20,6 +22,7 @@ func _ready() -> void:
 	terminal.pressed.connect(func(): terminal_icon_pressed.emit())
 	notepad.pressed.connect(func(): notepad_icon_pressed.emit())
 	notif.pressed.connect(func(): notification_icon_pressed.emit())
+	shop.pressed.connect(func(): shop_icon_pressed.emit())
 
 func notif_icon_unread() -> void:
 	notif.texture_normal = NOTIFICATION_ICON_UNREAD

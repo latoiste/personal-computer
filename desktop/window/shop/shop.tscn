@@ -133,6 +133,7 @@ theme_override_constants/margin_left = 8
 
 [node name="Label" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=814968434]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Credits: "
 
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1865876445]

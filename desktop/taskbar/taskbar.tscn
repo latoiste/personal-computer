@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://be2myafmu1mgc" path="res://sprites/taskbar/notification/notification_icon_pressed.png" id="9_bfifv"]
 [ext_resource type="Texture2D" uid="uid://0ao5rr0obpbt" path="res://sprites/taskbar/notification/notification_icon_hover.png" id="10_2mhmr"]
 [ext_resource type="Texture2D" uid="uid://ds70o4br2x6q3" path="res://sprites/taskbar/notification/notification_icon.png" id="10_i6566"]
+[ext_resource type="Texture2D" uid="uid://lyi56ctcxago" path="res://sprites/taskbar/shop/shop_icon.png" id="10_nmd74"]
+[ext_resource type="Texture2D" uid="uid://dsluuiovrewbn" path="res://sprites/taskbar/shop/shop_icon_pressed.png" id="11_lbqaf"]
+[ext_resource type="Texture2D" uid="uid://d2msl5yan5qw5" path="res://sprites/taskbar/shop/shop_icon_hover.png" id="12_k1cpg"]
 
 [node name="Taskbar" type="HBoxContainer" unique_id=636129337]
 custom_minimum_size = Vector2(0, 48)
@@ -43,7 +46,7 @@ texture = ExtResource("2_bfifv")
 metadata/_edit_use_anchors_ = true
 
 [node name="Notepad" type="TextureButton" parent="." unique_id=1929019378]
-custom_minimum_size = Vector2(72, 72)
+custom_minimum_size = Vector2(81, 72)
 layout_mode = 2
 texture_normal = ExtResource("4_i6566")
 texture_pressed = ExtResource("5_rckkn")
@@ -51,11 +54,19 @@ texture_hover = ExtResource("6_orlcp")
 stretch_mode = 0
 
 [node name="Terminal" type="TextureButton" parent="." unique_id=314138349]
-custom_minimum_size = Vector2(72, 0)
+custom_minimum_size = Vector2(81, 0)
 layout_mode = 2
 texture_normal = ExtResource("5_bfifv")
 texture_pressed = ExtResource("6_2mhmr")
 texture_hover = ExtResource("7_i6566")
+stretch_mode = 0
+
+[node name="Shop" type="TextureButton" parent="." unique_id=1063397959]
+custom_minimum_size = Vector2(81, 0)
+layout_mode = 2
+texture_normal = ExtResource("10_nmd74")
+texture_pressed = ExtResource("11_lbqaf")
+texture_hover = ExtResource("12_k1cpg")
 stretch_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1813649147]

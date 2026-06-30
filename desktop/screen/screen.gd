@@ -19,8 +19,8 @@ func _ready() -> void:
 	notif.visible = false
 	
 	taskbar.terminal_icon_pressed.connect(try_open_window.bind("terminal"))
-	#taskbar.notepad_icon_pressed.connect(try_open_window.bind("notepad"))
-	taskbar.notepad_icon_pressed.connect(try_open_window.bind("shop"))
+	taskbar.notepad_icon_pressed.connect(try_open_window.bind("notepad"))
+	taskbar.shop_icon_pressed.connect(try_open_window.bind("shop"))
 	taskbar.notification_icon_pressed.connect(toggle_notification)
 
 func on_new_request(request: Request) -> void:
