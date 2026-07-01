@@ -31,8 +31,8 @@ func _init(request_title: String, description: String, reward: int, duration_sec
 	self.duration_sec = duration_sec
 	self.allowed_commands = allowed_commands
 	
-	#id = _random_id()
-	id = "1"
+	id = _random_id()
+	#id = "1"
 	is_accepted = false
 	remaining_time = duration_sec
 

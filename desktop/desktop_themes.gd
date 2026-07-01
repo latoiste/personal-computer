@@ -1,3 +1,3 @@
 extends Node
 
-signal wallpaper_changed(wallpaper_path: String)
+signal wallpaper_changed(id: String)

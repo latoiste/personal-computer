@@ -8,7 +8,7 @@ extends Control
 @onready var credits_manager: CreditsManager = $CreditsManager
 
 const MIN_WAIT_TIME := 5
-const MAX_WAIT_TIME := 5
+const MAX_WAIT_TIME := 15
 
 var requests: Array[Request] = [
 	SortRequest.new(
@@ -22,7 +22,7 @@ var requests: Array[Request] = [
 ]
 
 func _ready() -> void:
-	# TODO: Load credits
+	SaveManager.load_game()
 	notif.request_accepted.connect(request_manager.on_request_accepted)
 	request_timer.timeout.connect(spawn_new_request)
 	request_manager.request_completed.connect(func(request: Request): credits_manager.add_credits(request.reward))

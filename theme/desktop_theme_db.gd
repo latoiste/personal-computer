@@ -1,7 +1,13 @@
-class_name DesktopThemeDB
 extends Node
 
-const WALLPAPER_STORE = {
+func _ready() -> void:
+	var unlocked_wallpaper_id := SaveManager.load_unlocked_wallpaper()
+	for id in unlocked_wallpaper_id:
+		var wallpaper = WALLPAPER_STORE[id]
+		if wallpaper:
+			wallpaper.unlocked = true
+
+var WALLPAPER_STORE = {
 	"wallpaper_default": {
 		"display": "Default",
 		"price": 0,

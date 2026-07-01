@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 ThemeManager="*uid://beg4dfdkuto7s"
+SaveManager="*uid://b33yk437docb4"
+DesktopThemeDB="*uid://comsis80rjjo8"
 
 [debug]
 

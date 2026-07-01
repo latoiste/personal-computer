@@ -20,4 +20,4 @@ func clone() -> SortRequest:
 func check_win() -> bool:
 	if images_sorted && documents_sorted && videos_sorted:
 		return true
-	return true
+	return false

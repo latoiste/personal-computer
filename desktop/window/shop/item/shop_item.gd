@@ -46,6 +46,7 @@ func try_double_click() -> void:
 func buy_item() -> void:
 	unlocked = true
 	price_text.text = ""
+	
 	item_bought.emit(price)
 
 func apply_theme() -> void:

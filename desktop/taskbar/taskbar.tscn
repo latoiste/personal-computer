@@ -4,7 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://dkcm4myj3nmuu" path="res://sprites/taskbar/taskbar.png" id="2_bfifv"]
 [ext_resource type="Texture2D" uid="uid://cxqtg6d3l2xhf" path="res://sprites/taskbar/launcher/launcher.png" id="3_bfifv"]
 [ext_resource type="Texture2D" uid="uid://c3fbwdsejanur" path="res://sprites/taskbar/notepad/notepad_icon.png" id="4_i6566"]
+[ext_resource type="Texture2D" uid="uid://df3y5tyqx7bai" path="res://sprites/taskbar/launcher/launcher_pressed.png" id="4_k1cpg"]
 [ext_resource type="Texture2D" uid="uid://2wlurq3kw6kt" path="res://sprites/taskbar/terminal/terminal_icon.png" id="5_bfifv"]
+[ext_resource type="Texture2D" uid="uid://6l76y34ofpu8" path="res://sprites/taskbar/launcher/launcher_hover.png" id="5_dwk32"]
 [ext_resource type="Texture2D" uid="uid://buyico3bf4pry" path="res://sprites/taskbar/notepad/notepad_icon_pressed.png" id="5_rckkn"]
 [ext_resource type="Texture2D" uid="uid://l33mqyvi771" path="res://sprites/taskbar/terminal/terminal_icon_pressed.png" id="6_2mhmr"]
 [ext_resource type="Texture2D" uid="uid://yhmgrwbau5l2" path="res://sprites/taskbar/notepad/notepad_icon_hover.png" id="6_orlcp"]
@@ -34,10 +36,13 @@ layout_mode = 2
 texture = ExtResource("2_bfifv")
 metadata/_edit_use_anchors_ = true
 
-[node name="Launcher" type="TextureRect" parent="." unique_id=1371031654]
+[node name="Launcher" type="TextureButton" parent="." unique_id=841610715]
+custom_minimum_size = Vector2(144, 0)
 layout_mode = 2
-texture = ExtResource("3_bfifv")
-expand_mode = 3
+texture_normal = ExtResource("3_bfifv")
+texture_pressed = ExtResource("4_k1cpg")
+texture_hover = ExtResource("5_dwk32")
+stretch_mode = 0
 
 [node name="TextureRect3" type="TextureRect" parent="." unique_id=1881531827]
 custom_minimum_size = Vector2(22.425, 0)

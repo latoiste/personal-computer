@@ -4,6 +4,7 @@ extends Control
 @onready var taskbar: Taskbar = $Taskbar
 @onready var notif: NotificationWidget = $Notification
 @onready var wallpaper: Wallpaper = $Wallpaper
+@onready var saved_text: Label = $SavedText
 
 const TERMINAL_SCENE := preload("uid://cy5dik8x2m1ht")
 const NOTEPAD_SCENE := preload("uid://ceyu1qra6du6a")
@@ -17,11 +18,21 @@ var credits_manager: CreditsManager
 
 func _ready() -> void:
 	notif.visible = false
+	saved_text.visible = false
 	
+	taskbar.launcher_icon_pressed.connect(show_saved_text)
 	taskbar.terminal_icon_pressed.connect(try_open_window.bind("terminal"))
 	taskbar.notepad_icon_pressed.connect(try_open_window.bind("notepad"))
 	taskbar.shop_icon_pressed.connect(try_open_window.bind("shop"))
 	taskbar.notification_icon_pressed.connect(toggle_notification)
+
+func show_saved_text() -> void:
+	if saved_text.visible:
+		return
+	
+	saved_text.visible = true
+	await get_tree().create_timer(1.5).timeout
+	saved_text.visible = false
 
 func on_new_request(request: Request) -> void:
 	notif.new_notification(request)
